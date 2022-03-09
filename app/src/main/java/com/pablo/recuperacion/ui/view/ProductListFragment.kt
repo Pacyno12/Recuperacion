@@ -75,8 +75,8 @@ class ProductListFragment : Fragment() {
         binding.btnSearch.visibility = View.GONE
         binding.tietSearch.doOnTextChanged() { text, _, _, _ ->
             val query = text.toString().lowercase()
-            val usersFiltered = filterProductsByQuery(query)
-            adapter.submitList(usersFiltered)
+            val productsFiltered = filterProductsByQuery(query)
+            adapter.submitList(productsFiltered)
         }
         binding.tietSearch.setOnEditorActionListener { textView, i, keyEvent ->
             hideKeyboard()
@@ -101,6 +101,10 @@ class ProductListFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun onProductClick(id:String){
+       // val action = Direction
     }
 
     companion object {
