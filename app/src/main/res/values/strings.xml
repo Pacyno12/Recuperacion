@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name" translatable="false">Recuperacion</string>
+    <string name="lista">Lista</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="disponible">Disponible</string>
+    <string name="precio_con_descuento">Precio con descuento</string>
+    <string name="precio_normal">Precio normal</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="nombre">Nombre</string>
+    <string name="stock" translatable="false">Stock</string>
+    <string name="imagen_url">URL Imagen</string>
+    <string name="buscar">Buscar</string>
+</resources>

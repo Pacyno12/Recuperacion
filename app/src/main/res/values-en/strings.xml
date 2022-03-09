@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="imagen_url">URL Image</string>
+    <string name="precio_normal">Normal price</string>
+    <string name="precio_con_descuento">Price with discount</string>
+    <string name="nombre">Name</string>
+    <string name="lista">List</string>
+    <string name="favoritos">Favourites</string>
+    <string name="disponible">Available</string>
+    <string name="descripcion">Description</string>
+    <string name="buscar">Search</string>
+</resources>
