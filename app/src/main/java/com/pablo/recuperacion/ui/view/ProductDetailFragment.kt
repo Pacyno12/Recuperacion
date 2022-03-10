@@ -42,15 +42,16 @@ class ProductDetailFragment : Fragment() {
             binding.tvRegularPrice.text = it.regularPrice.toString()
             binding.tvDiscountPrice.text = it.discountPrice.toString()
             binding.tvAvailable.text = it.available.toString()
-        } ?: userNotFound()
+        } ?: productNotFound()
         binding.root.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
 
     }
 
-    private fun userNotFound() {
+    private fun productNotFound() {
         Toast.makeText(context, "Producto no encontrado", Toast.LENGTH_SHORT).show()
+
         parentFragmentManager.popBackStack()
     }
 

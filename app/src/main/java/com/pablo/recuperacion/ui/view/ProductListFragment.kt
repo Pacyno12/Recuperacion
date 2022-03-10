@@ -16,7 +16,6 @@ import com.pablo.recuperacion.ProductAdapter
 import com.pablo.recuperacion.R
 import com.pablo.recuperacion.core.RetrofitHelper
 import com.pablo.recuperacion.data.model.ProductModel
-import com.pablo.recuperacion.data.model.ProductResponse
 import com.pablo.recuperacion.databinding.FragmentProductListBinding
 import com.pablo.recuperacion.products
 import retrofit2.Call
