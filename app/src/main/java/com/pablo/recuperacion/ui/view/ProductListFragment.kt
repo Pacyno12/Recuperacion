@@ -13,6 +13,7 @@ import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.commit
 import androidx.recyclerview.widget.GridLayoutManager
 import com.pablo.recuperacion.ProductAdapter
+import com.pablo.recuperacion.R
 import com.pablo.recuperacion.core.RetrofitHelper
 import com.pablo.recuperacion.data.model.ProductModel
 import com.pablo.recuperacion.data.model.ProductResponse
@@ -27,6 +28,7 @@ class ProductListFragment : Fragment() {
     private val adapter = ProductAdapter {
         parentFragmentManager.commit {
             setReorderingAllowed(true)
+            add(R.id.fcv_container, ProductDetailFragment.newInstance(it.id))
             addToBackStack("product")
         }
     }
@@ -55,7 +57,7 @@ class ProductListFragment : Fragment() {
                     Toast.makeText(context, "Error en la respuesta", Toast.LENGTH_SHORT).show()
                     val code = response.code()
                     val message = response.message()
-                    Log.e("requestData", "error en la respuesta: $code <> $message")
+                    Log.e("requestData", "Error en la respuesta: $code <> $message")
                 }
             }
 
@@ -82,7 +84,6 @@ class ProductListFragment : Fragment() {
             hideKeyboard()
             true
         }
-
     }
 
     private fun filterProductsByQuery(query: String) = products.filter { product ->
@@ -103,9 +104,6 @@ class ProductListFragment : Fragment() {
         _binding = null
     }
 
-    private fun onProductClick(id:String){
-       // val action = Direction
-    }
 
     companion object {
         @JvmStatic

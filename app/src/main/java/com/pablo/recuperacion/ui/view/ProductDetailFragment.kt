@@ -14,12 +14,12 @@ class ProductDetailFragment : Fragment() {
     private var _binding: FragmentProductDetailBinding? = null
     private val binding
         get() = _binding!!
-    private var userId: String? = null
+    private var productId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            userId = it.getString(USER_ID)
+            productId = it.getString(PRODUCT_ID)
         }
     }
 
@@ -33,7 +33,7 @@ class ProductDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val product = products.firstOrNull { it.id == userId }
+        val product = products.firstOrNull { it.id == productId }
         product?.let {
             binding.ivPhoto.imageUrl(it.imageUrl)
             binding.tvName.text = it.name
@@ -55,13 +55,13 @@ class ProductDetailFragment : Fragment() {
     }
 
     companion object {
-        private const val USER_ID = "user_id"
+        private const val PRODUCT_ID = "id"
 
         @JvmStatic
-        fun newInstance(userId: String) =
+        fun newInstance(productId: String) =
             ProductDetailFragment().apply {
                 arguments = Bundle().apply {
-                    putString(USER_ID, userId)
+                    putString(PRODUCT_ID, productId)
                 }
             }
     }
