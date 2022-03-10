@@ -4,6 +4,8 @@ import com.google.gson.annotations.Expose
 
 data class ProductBody(
     @Expose
+    val id: String,
+    @Expose
     val name: String,
     @Expose
     val description: String,

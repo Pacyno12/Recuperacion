@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.pablo.recuperacion.core.RetrofitHelper
+import com.pablo.recuperacion.data.network.ApiClient
 import com.pablo.recuperacion.databinding.FragmentProductDetailBinding
 import com.pablo.recuperacion.imageUrl
 import com.pablo.recuperacion.products
@@ -46,7 +48,12 @@ class ProductDetailFragment : Fragment() {
         binding.root.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
+        binding.btnFav.setOnClickListener {
 
+        }
+        binding.btnBorrar.setOnClickListener {
+            RetrofitHelper.service.deleteProduct(PRODUCT_ID)
+        }
     }
 
     private fun productNotFound() {

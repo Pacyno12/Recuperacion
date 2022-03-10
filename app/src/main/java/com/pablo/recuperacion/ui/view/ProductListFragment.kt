@@ -75,20 +75,23 @@ class ProductListFragment : Fragment() {
 
         binding.btnSearch.visibility = View.GONE
         binding.tietSearch.doOnTextChanged() { text, _, _, _ ->
-            val query = text.toString().lowercase()
-            val productsFiltered = filterProductsByQuery(query)
-            adapter.submitList(productsFiltered)
+            val id = text.toString()
+           // val productsFiltered = filterProductsById(id)
+           // adapter.submitList(productsFiltered)
         }
         binding.tietSearch.setOnEditorActionListener { textView, i, keyEvent ->
             hideKeyboard()
             true
         }
+        binding.btnAdd.setOnClickListener {
+
+        }
     }
 
-    private fun filterProductsByQuery(query: String) = products.filter { product ->
-        product.name.lowercase().contains(query.lowercase())
+    /*private fun filterProductsById(query: String) = products.filter { product ->
+        RetrofitHelper.service.searchProducts(query)
     }
-
+     */
     private fun hideKeyboard() {
         binding.rvProducts.requestFocus()
         with(binding.rvProducts) {

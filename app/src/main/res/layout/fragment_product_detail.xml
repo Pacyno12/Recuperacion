@@ -128,7 +128,7 @@
                 android:layout_height="33dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="29dp"
-                android:src="@drawable/ic_baseline_star_border_24"
+                android:src="@drawable/ic_baseline_favorite_border_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tvName"
                 app:layout_constraintHorizontal_bias="0.0"

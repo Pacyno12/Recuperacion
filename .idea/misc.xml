@@ -3,15 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Usuario/Documents/Recuperacion/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.299" />
+        <entry key="..\:/Users/Usuario/Documents/Recuperacion/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.299" />
+        <entry key="..\:/Users/Usuario/Documents/Recuperacion/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.299" />
+        <entry key="..\:/Users/Usuario/Documents/Recuperacion/app/src/main/res/drawable/ic_launcher_background.xml" value="0.299" />
         <entry key="..\:/Users/Usuario/Documents/Recuperacion/app/src/main/res/layout/activity_main.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/Usuario/Documents/Recuperacion/app/src/main/res/layout/fragment_product_add.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/Usuario/Documents/Recuperacion/app/src/main/res/layout/fragment_product_detail.xml" value="0.33" />
+        <entry key="..\:/Users/Usuario/Documents/Recuperacion/app/src/main/res/layout/fragment_product_fav.xml" value="0.1828774062816616" />
         <entry key="..\:/Users/Usuario/Documents/Recuperacion/app/src/main/res/layout/fragment_product_list.xml" value="0.2916666666666667" />
         <entry key="..\:/Users/Usuario/Documents/Recuperacion/app/src/main/res/layout/fragment_product_listragment.xml" value="0.37604166666666666" />
         <entry key="..\:/Users/Usuario/Documents/Recuperacion/app/src/main/res/layout/fragment_user_detail.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/Usuario/Documents/Recuperacion/app/src/main/res/layout/fragment_user_list.xml" value="0.37604166666666666" />
         <entry key="..\:/Users/Usuario/Documents/Recuperacion/app/src/main/res/layout/item_product.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/Usuario/Documents/Recuperacion/app/src/main/res/layout/item_user.xml" value="0.37604166666666666" />
+        <entry key="..\:/Users/Usuario/Documents/Recuperacion/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.196875" />
         <entry key="..\:/Users/Usuario/Documents/UD5_03Fragments/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/Usuario/Documents/UD5_03Fragments/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1" />
         <entry key="..\:/Users/Usuario/Documents/UD5_03Fragments/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
