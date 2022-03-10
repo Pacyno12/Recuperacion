@@ -3,25 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainActivity">
+    app:startDestination="@id/productFavFragment">
 
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.pablo.recuperacion.ui.view.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_product_detail" >
+        <action
+            android:id="@+id/action_productDetailFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productFavFragment"
+        android:name="com.pablo.recuperacion.ui.view.ProductFavFragment"
+        android:label="fragment_product_fav"
+        tools:layout="@layout/fragment_product_fav" />
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.pablo.recuperacion.ui.view.ProductListFragment"
+        android:label="fragment_product_list"
+        tools:layout="@layout/fragment_product_list" >
+        <action
+            android:id="@+id/action_productListFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
     <activity
         android:id="@+id/mainActivity"
         android:name="com.pablo.recuperacion.ui.view.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
     <fragment
-        android:id="@+id/productDetailFragment"
-        android:name="com.pablo.recuperacion.ui.view.ProductDetailFragment"
-        android:label="fragment_product_detail"
-        tools:layout="@layout/fragment_product_detail" />
-    <fragment
-        android:id="@+id/productListFragment"
-        android:name="com.pablo.recuperacion.ui.view.ProductListFragment"
-        android:label="fragment_product_add"
-        tools:layout="@layout/fragment_product_add" />
-    <fragment
         android:id="@+id/productAddFragment"
         android:name="com.pablo.recuperacion.ui.view.ProductAddFragment"
-        android:label="ProductAddFragment" />
+        android:label="fragment_product_add"
+        tools:layout="@layout/fragment_product_add" />
 </navigation>
