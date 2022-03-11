@@ -42,6 +42,6 @@ private class DiffUtilCallback: DiffUtil.ItemCallback<ProductModel>(){
     override fun areItemsTheSame(oldItem: ProductModel, newItem: ProductModel): Boolean =
         oldItem.id == newItem.id
 
-    override fun areContentsTheSame(oldItem: ProductModel, newItem: ProductModel): Boolean = oldItem.imageUrl == newItem.imageUrl
+    override fun areContentsTheSame(oldItem: ProductModel, newItem: ProductModel): Boolean = oldItem == newItem
 
 }

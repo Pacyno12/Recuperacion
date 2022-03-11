@@ -12,6 +12,6 @@ interface ProductDao {
     @Query("SELECT * FROM product_table")
     suspend fun getAllProducts():List<ProductEntity>
 
-    @Insert(onConflict = OnConflictStrategy.ABORT)
-    suspend fun inserProducts(products:List<ProductModel>)
+    @Insert()
+    suspend fun insertProducts(products:List<ProductModel>)
 }

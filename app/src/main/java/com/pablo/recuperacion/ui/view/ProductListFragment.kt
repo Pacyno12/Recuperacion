@@ -11,11 +11,13 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.commit
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.pablo.recuperacion.ProductAdapter
 import com.pablo.recuperacion.R
 import com.pablo.recuperacion.core.RetrofitHelper
 import com.pablo.recuperacion.data.model.ProductModel
+import com.pablo.recuperacion.data.model.ProductResponse
 import com.pablo.recuperacion.databinding.FragmentProductListBinding
 import com.pablo.recuperacion.products
 import retrofit2.Call
@@ -27,7 +29,7 @@ class ProductListFragment : Fragment() {
     private val adapter = ProductAdapter {
         parentFragmentManager.commit {
             setReorderingAllowed(true)
-            add(R.id.fcv_container, ProductDetailFragment.newInstance(it.id))
+            add(R.id.nav_host_fragment, ProductDetailFragment.newInstance(it.id, it.name, it.description, it.stock, it.regularPrice, it.discountPrice, it.available, it.imageUrl))
             addToBackStack("product")
         }
     }
@@ -45,6 +47,7 @@ class ProductListFragment : Fragment() {
     }
 
     private fun requestData() {
+
         RetrofitHelper.service.getAllProducts().enqueue(object : Callback<List<ProductModel>> {
             override fun onResponse(
                 call: Call<List<ProductModel>>,
@@ -84,17 +87,20 @@ class ProductListFragment : Fragment() {
             true
         }
         binding.btnAdd.setOnClickListener {
-
+            val segue = ProductListFragmentDirections.actionProductListFragmentToProductAddFragment()
+            findNavController().navigate(segue)
         }
     }
 
-    /*private fun filterProductsById(query: String) = products.filter { product ->
+    /*
+    private fun filterProductsById(query: String) = products.filter { product ->
         RetrofitHelper.service.searchProducts(query)
     }
      */
+
     private fun hideKeyboard() {
         binding.rvProducts.requestFocus()
-        with(binding.rvProducts) {
+        with (binding.rvProducts) {
             requestFocus()
             val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
             imm?.hideSoftInputFromWindow(windowToken, 0)
