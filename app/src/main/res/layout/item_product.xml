@@ -44,24 +44,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvName"
             tools:text="Precio" />
-        <TextView
-            android:id="@+id/tvStock"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_small"
-            android:layout_marginTop="@dimen/spacing_small"
-            android:layout_marginEnd="@dimen/spacing_small"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvDiscountPrice"
-            tools:text="Stock" />
 
         <TextView
             android:id="@+id/txtPocasUnidades"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/Rojo"
-            android:text="POCAS UNICADES"
+            android:text="@string/pocas_unicades"
             android:textColor="@color/white"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@+id/ivPhoto"

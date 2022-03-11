@@ -24,7 +24,6 @@ class ProductAdapter(private val listener: (ProductModel) -> Unit) :
         holder.binding.ivPhoto.imageUrl(product.imageUrl)
         holder.binding.tvName.text = product.name
         holder.binding.tvDiscountPrice.text = product.discountPrice.toString()
-        holder.binding.tvStock.text = product.stock.toString()
         if(product.stock <= 5)
         {
             holder.binding.txtPocasUnidades.isVisible = true

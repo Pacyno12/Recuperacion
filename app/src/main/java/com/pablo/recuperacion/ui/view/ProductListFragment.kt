@@ -47,7 +47,6 @@ class ProductListFragment : Fragment() {
     }
 
     private fun requestData() {
-
         RetrofitHelper.service.getAllProducts().enqueue(object : Callback<List<ProductModel>> {
             override fun onResponse(
                 call: Call<List<ProductModel>>,

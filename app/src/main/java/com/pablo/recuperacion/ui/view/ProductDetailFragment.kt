@@ -10,9 +10,15 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.gson.annotations.Expose
 import com.pablo.recuperacion.core.RetrofitHelper
+import com.pablo.recuperacion.data.model.ProductBody
+import com.pablo.recuperacion.data.model.ProductModel
 import com.pablo.recuperacion.databinding.FragmentProductDetailBinding
 import com.pablo.recuperacion.imageUrl
 import com.pablo.recuperacion.products
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 
 
 class ProductDetailFragment : Fragment() {
@@ -51,6 +57,20 @@ class ProductDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        RetrofitHelper.service.searchProducts(productId!!).enqueue(object :
+            Callback<List<ProductModel>> {
+            override fun onResponse(
+                call: Call<List<ProductModel>>,
+                response: Response<List<ProductModel>>
+            ) {
+                response.body()
+            }
+
+            override fun onFailure(call: Call<List<ProductModel>>, t: Throwable) {
+                Toast.makeText(context, "Error en la conexion", Toast.LENGTH_SHORT).show()
+            }
+
+        })
         val product = products.firstOrNull { it.id == productId }
         product?.let {
             binding.ivPhoto.imageUrl(it.imageUrl)
